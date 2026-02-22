@@ -196,7 +196,6 @@ p {
   color: var(--color-text-muted);
 }
 
-/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -209,6 +208,21 @@ p {
   z-index: 100;
   background: linear-gradient(to bottom, rgba(5, 5, 5, 0.9), transparent);
   backdrop-filter: blur(10px);
+}
+
+.nav-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 .logo {
@@ -721,44 +735,55 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .nav-brand {
+    width: 100%;
+    z-index: 101;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
   .navbar {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
     padding: 1.5rem var(--padding-x);
-    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.75), transparent);
-    backdrop-filter: blur(5px);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
   }
 
   .nav-links {
-    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 0.5rem 5%;
-    /* Hide scrollbar */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .nav-links::-webkit-scrollbar {
-    display: none;
+  .nav-links.active {
+    max-height: 100vh;
+    padding: 2.5rem 0;
+    opacity: 1;
+    overflow-y: auto;
   }
 
   .nav-links li {
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
-    /* Prevent text wrapping */
+    white-space: normal;
+    width: 100%;
   }
 
   .nav-links li a {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
   }
 
   .navbar .btn-primary {
