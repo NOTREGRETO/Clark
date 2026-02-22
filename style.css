@@ -744,8 +744,14 @@ section {
     text-align: center;
   }
 
+  section {
+    padding: 4rem var(--padding-x);
+    min-height: auto;
+  }
+
   .bento-hero {
     padding-top: 120px;
+    min-height: auto;
     gap: 2rem;
   }
 
@@ -784,6 +790,11 @@ section {
 @media (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .service-card .icon-container {
+    margin: 0 auto 1.5rem auto;
   }
 }
 
@@ -1126,8 +1137,23 @@ section {
 }
 
 @media (max-width: 900px) {
-  .testimonials-grid {
+
+  .testimonials-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-title-row {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .testimonials-actions {
@@ -1382,6 +1408,10 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .expertise-content.service-card {
+    text-align: center;
+  }
+
   .hero-content h1 {
     font-size: 3rem;
   }
@@ -1392,6 +1422,13 @@ section {
 
   .timeline-content {
     padding: 2rem;
+    text-align: center;
+  }
+
+  .timeline-header {
+    border-bottom: 2px solid var(--color-glass-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .timeline-header h3 {
