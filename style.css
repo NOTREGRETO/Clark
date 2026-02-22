@@ -22,12 +22,15 @@
 
 
 
+html,
 body {
   background: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--color-bg) 70%);
   background-attachment: fixed;
   color: var(--color-text);
   font-family: var(--font-main);
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
@@ -730,15 +733,13 @@ section {
 
   .nav-links {
     flex-wrap: nowrap;
-    justify-content: center;
-    /* keep horizontal layout internally */
+    justify-content: flex-start;
     align-items: center;
     gap: 1.5rem;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
-    /* Space for scrolling */
+    padding: 0.5rem 5%;
     /* Hide scrollbar */
     -ms-overflow-style: none;
     scrollbar-width: none;
