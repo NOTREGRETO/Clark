@@ -728,8 +728,24 @@ section {
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.8rem 1.2rem;
     width: 100%;
+  }
+
+  .nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+
+  .navbar .btn-primary {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
   }
 
   .exp-row {
@@ -745,12 +761,12 @@ section {
   }
 
   section {
-    padding: 4rem var(--padding-x);
+    padding: 2.5rem var(--padding-x);
     min-height: auto;
   }
 
   .bento-hero {
-    padding-top: 120px;
+    padding-top: 150px;
     min-height: auto;
     gap: 2rem;
   }
@@ -763,6 +779,18 @@ section {
     font-size: clamp(1.8rem, 4vw, 3rem);
     letter-spacing: 5px;
     text-align: center;
+  }
+
+  .ambient-orb {
+    filter: blur(60px);
+    opacity: 0.15;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .service-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 
