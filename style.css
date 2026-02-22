@@ -719,24 +719,41 @@ section {
   }
 
   .navbar {
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem var(--padding-x);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem var(--padding-x);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.75), transparent);
+    backdrop-filter: blur(5px);
   }
 
   .nav-links {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    /* keep horizontal layout internally */
     align-items: center;
-    gap: 0.8rem 1.2rem;
+    gap: 1.5rem;
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    /* Space for scrolling */
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-links li {
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
+    /* Prevent text wrapping */
   }
 
   .nav-links li a {
@@ -796,13 +813,39 @@ section {
 
 @media (max-width: 600px) {
   .service-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
 
   .loader-split-text {
     font-size: clamp(1.2rem, 5vw, 2rem);
     letter-spacing: 3px;
     line-height: 1.5;
+  }
+
+  .navbar {
+    padding: 0.8rem 2%;
+  }
+
+  .nav-links {
+    gap: 0.5rem 0.6rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.75rem;
+  }
+
+  .navbar .btn-primary {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .bento-hero {
+    padding-top: 100px;
+    gap: 1.5rem;
+  }
+
+  section {
+    padding: 1.5rem var(--padding-x);
   }
 }
 
